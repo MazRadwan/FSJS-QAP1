@@ -4,6 +4,9 @@
 // It provides functionality for handling requests, responses, setting headers and managing routing.
 // all of which are fundamental to building web applications, APIs and networked services.
 
+// this app will create a server and if you navigate to home or about uri on localhost:3000 it will display
+// a message in the browser and log your request in the console.
+
 const http = require("http");
 
 // create http server
@@ -33,26 +36,6 @@ const server = http.createServer((req, res) => {
         res.end("Method Not Allowed");
       }
       break;
-    case "/data":
-      if (req.method === "POST") {
-        // HANDLE POST REQUEST TO /DATA
-        let body = "";
-        //collect data from the request
-        req.on("end", (chunk) => {
-          body += chunk.toString();
-        });
-        //when all data received , respond with the received data
-        req.on("end", () => {
-          console.log("Data received:", body);
-          res.writeHead(200, { "Content-Type": "text/plain" });
-          res.end(JSON.stringify({ receveivedData: body }));
-        });
-      } else {
-        // handle unsupported methods for this route with a 405
-        res.writeHead(405, { "Content-Type": "text/plain" });
-        res.end("Method Not Allowed");
-      }
-      break;
     default:
       // otherwise respond with a 404 Not Found
       res.writeHead(404, { "Content-Type": "text/plain" });
@@ -65,7 +48,4 @@ server.listen(3000, () => {
 });
 server.on("error", (err) => {
   console.error("Server error:", err);
-});
-server.on("request", (req, res) => {
-  console.log("Request received");
 });
