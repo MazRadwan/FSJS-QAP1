@@ -4,7 +4,7 @@
 
 ## Node Core Global Objects
 
-**Each of the following Core Objects/modules contain a brief explanation of the object and how it is used, and sample code demonstrating its use**
+**Each of the following Core Objects/modules contain a brief explanation of the object and how it is used with sample code demonstrating its use.**
 
 - http
 - event
