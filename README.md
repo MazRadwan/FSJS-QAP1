@@ -15,5 +15,5 @@
 
 ## NPM package install and Sample code
 
-**brcrypt** - installed with a sample code for password hashing and comparison.
-**cookie** - installed and parsed a sample cookie
+- **brcrypt** : installed with a sample code for password hashing and comparison.
+- **cookie** : installed and parsed a sample cookie
